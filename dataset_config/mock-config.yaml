@@ -1,0 +1,22 @@
+- {
+    name: "client",
+    generation-type: "basic",
+    row_count: 10,
+    attributes: [
+      {name: "client_id",           category: "SIMPLE",         type: "aba",                            method: "basic" }, 
+      {name: "client_name",         category: "SIMPLE",         type: "name",                           method: "basic" }, 
+      {name: "country",             category: "SIMPLE",         type: "country",                        method: "basic" }, 
+      {name: "ultimate_parentid",   category: "DEPENDS_ON",     type: "self.client_id",                 method: "basic" },
+      {name: "product_type",        category: "SIMPLE",         type: "product",                        method: "basic" },
+      {name: "industry",            category: "SIMPLE",         type: "industry",                       method: "basic" }
+    ]
+  } 
+- {
+    name: "exposure",
+    generation-type: "basic",
+    row_count: 10,
+    attributes: [
+      {name: "client_id",           category: "DEPENDS_ON",     type: "client.client_id",               method: "basic" }, 
+      {name: "potential_exposure",  category: "SIMPLE",         type: "amountMillions",                 method: "basic" },
+    ]
+  }
