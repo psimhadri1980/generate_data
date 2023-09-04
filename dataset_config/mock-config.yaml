@@ -8,7 +8,10 @@
       {name: "country",             category: "SIMPLE",         type: "country",                        method: "basic" }, 
       {name: "ultimate_parentid",   category: "DEPENDS_ON",     type: "self.client_id",                 method: "basic" },
       {name: "product_type",        category: "SIMPLE",         type: "product",                        method: "basic" },
-      {name: "industry",            category: "SIMPLE",         type: "industry",                       method: "basic" }
+      {name: "industry-level0",     category: "COMPLEX",        type: "industry:id",                    method: "group",        group: "industry"},
+      {name: "industry-level0-name",category: "COMPLEX",        type: "industry:name",                  method: "group",        group: "industry"},
+      {name: "industry-level1",     category: "COMPLEX",        type: "industry:level-1:<RANDOM>:id",   method: "group",        group: "industry" },
+      {name: "industry-level1-name",category: "COMPLEX",        type: "industry:level-1:<RANDOM>:name", method: "group",        group: "industry" }
     ]
   } 
 - {
