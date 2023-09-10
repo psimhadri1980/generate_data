@@ -25,7 +25,13 @@ class Dataset:
         self.file_name = target_path + "/" + self.dataset_name  + ".csv"
         
         for attribute in self.config.attributes:
-            self.data.append(self.generator.column_values(self, attribute, datasets))
+            if attribute.method == "basic":
+                self.data.append(self.generator.column_values(self, attribute, datasets))
+            elif attribute.method == "group":
+                self.data.append()
 
         data_frame = pd.DataFrame(dict(zip(self.attribute_names, self.data)))
         data_frame.to_csv(self.file_name)
+        
+    def identify_column_groups (all_attributes):
+        return [group_column for group_column in all_attributes if group_column.group ]
